@@ -1,0 +1,160 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/zhe.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>georgiy lapin</title>
+	</head>
+	<body>
+		<nav class="nav">
+			<a href="#home">home</a>
+			<a href="#research">research</a>
+			<a href="#experience">experience</a>
+			<a href="#contact">contact</a>
+		</nav>
+
+		<main id="home" class="container">
+			<header class="hero">
+				<h1>georgiy lapin</h1>
+				<p class="tag">software engineer</p>
+				<p class="sep">•</p>
+				<p class="blurb">building simple, fast websites and tools</p>
+			</header>
+
+			<section id="research" class="section">
+				<h2>research</h2>
+				<ul class="list">
+					<li>
+						<em>Example Project Title</em>
+						<br />
+						<span class="muted">brief description or venue · year</span>
+					</li>
+				</ul>
+			</section>
+
+			<section id="experience" class="section">
+				<h2>experience</h2>
+				<div class="role">
+					<div class="role-head">
+						<strong>Role</strong>
+						<span class="muted"> · Company · Dates</span>
+					</div>
+					<p class="muted">one-line summary of impact</p>
+				</div>
+			</section>
+
+			<section id="contact" class="section">
+				<h2>contact</h2>
+				<p>
+					<span class="muted">email</span>
+					<br />
+					<a href="mailto:you@example.com">you@example.com</a>
+				</p>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<p>© georgiy lapin 2025. all rights reserved.</p>
+		</footer>
+
+		<style>
+			:root {
+				--text: #0a0a0a;
+				--muted: #6b7280;
+				--border: #e5e7eb;
+			}
+
+			html, body {
+				margin: 0;
+				padding: 0;
+				background: #fff;
+				color: var(--text);
+				font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+				line-height: 1.6;
+			}
+
+			.container {
+				max-width: 720px;
+				margin: 0 auto;
+				padding: 32px 20px 64px;
+			}
+
+			.nav {
+				position: sticky;
+				top: 0;
+				background: rgba(255,255,255,0.85);
+				backdrop-filter: saturate(180%) blur(8px);
+				border-bottom: 1px solid var(--border);
+				padding: 10px 16px;
+				display: flex;
+				gap: 16px;
+				justify-content: center;
+				z-index: 10;
+			}
+
+			.nav a {
+				color: var(--text);
+				text-decoration: none;
+				font-size: 14px;
+				text-transform: lowercase;
+			}
+
+			.hero h1 {
+				font-size: 36px;
+				margin: 32px 0 4px;
+				font-weight: 700;
+			}
+
+			.tag {
+				margin: 0;
+				color: var(--muted);
+			}
+
+			.sep {
+				margin: 6px 0;
+				color: var(--muted);
+			}
+
+			.blurb {
+				margin: 0 0 24px 0;
+			}
+
+			.section {
+				margin-top: 28px;
+			}
+
+			.section h2 {
+				font-size: 16px;
+				text-transform: lowercase;
+				margin: 0 0 8px;
+			}
+
+			.list {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+
+			.list li {
+				margin: 8px 0 0 0;
+			}
+
+			.muted { color: var(--muted); }
+
+			.role { margin-top: 8px; }
+			.role-head { font-size: 15px; }
+
+			.footer {
+				border-top: 1px solid var(--border);
+				padding: 16px;
+				text-align: center;
+				color: var(--muted);
+			}
+		</style>
+	</body>
+</html>
