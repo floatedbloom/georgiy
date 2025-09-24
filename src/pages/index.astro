@@ -1,5 +1,5 @@
 ---
-
+import { Icon } from 'astro-icon/components';
 ---
 
 <html lang="en">
@@ -12,70 +12,160 @@
 	</head>
 	<body>
 		<nav class="nav">
-			<a href="#home">home</a>
-			<a href="#research">research</a>
-			<a href="#experience">experience</a>
-			<a href="#contact">contact</a>
+			<a href="#home" aria-label="home" title="home · 1" data-tip="home · 1"><Icon name="lucide:home" width="18" height="18" /></a>
+			<a href="#research" aria-label="research" title="research · 2" data-tip="research · 2"><Icon name="lucide:book-open" width="18" height="18" /></a>
+			<a href="#experience" aria-label="experience" title="experience · 3" data-tip="experience · 3"><Icon name="lucide:briefcase" width="18" height="18" /></a>
+			<a href="#contact" aria-label="contact" title="contact · 4" data-tip="contact · 4"><Icon name="lucide:mail" width="18" height="18" /></a>
 		</nav>
 
 		<main id="home" class="container">
 			<header class="hero">
+				<img class="avatar" src="/schoolpic.jpeg" alt="portrait" />
 				<h1>georgiy lapin</h1>
-				<p class="tag">software engineer</p>
-				<p class="sep">•</p>
-				<p class="blurb">building simple, fast websites and tools</p>
+				<p class="tag">(math ∩ cs) ⊂ uw</p>
+				<div class="social">
+					<a class="icon" href="https://github.com/floatedbloom" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+						<Icon name="simple-icons:github" width="20" height="20" />
+					</a>
+					<a class="icon" href="https://x.com/ImGeorgiyLapin" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+						<Icon name="simple-icons:x" width="20" height="20" />
+					</a>
+					<a class="icon" href="https://www.linkedin.com/in/georgiylapin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+						<Icon name="simple-icons:linkedin" width="20" height="20" />
+					</a>
+					<p class="sep">•</p>
+					<div class="email-container">
+						<a class="email" href="mailto:glapin@uw.edu">glapin [at] uw [dot] edu</a>
+					</div>
+				</div>
+				<br>
+				<p class="blurb">
+					I'm currently working on research and studying at University of Washington. I've previously worked on AI research
+					at WSU and founded a startup.
+				</p>
 			</header>
 
 			<section id="research" class="section">
-				<h2>research</h2>
-				<ul class="list">
+				<h1>research</h1>
+				<ul class="list bullets">
 					<li>
-						<em>Example Project Title</em>
-						<br />
-						<span class="muted">brief description or venue · year</span>
+						<em>Gravity Well Echo Chamber Modeling With An LLM-Based Confirmation Bias Model (Lapin, Jackson, Thompson)</em>
+						<ul class="sublist">
+							<li><span class="muted">Presented at the 2025 PiMUC Conference and SIAM PNW 2025 Conference</span></li>
+						</ul>
+					</li>
+					<li>
+						<em>Exploring Cybersecurity Applications in AI PCs (Lapin, Lu)</em>
+						<ul class="sublist">
+							<li><span class="muted">Poster presented at the WSU and Edmonds College research symposiums</span></li>
+						</ul>
+					</li>
+					<li>
+						<em>Pedagogical App for Math SKill Refinement (Lapin, Washburn)</em>
+						<ul class="sublist">
+							<li><span class="muted">Poster presented at the EvCC research symposium</span></li>
+						</ul>
 					</li>
 				</ul>
 			</section>
 
 			<section id="experience" class="section">
-				<h2>experience</h2>
+				<h1>experience</h1>
 				<div class="role">
-					<div class="role-head">
-						<strong>Role</strong>
-						<span class="muted"> · Company · Dates</span>
+					<div class="role-row">
+						<div class="role-head">
+							<strong>Software Engineering Intern</strong>
+						</div>
+						<div class="role-date muted">Aug 2025 - Present</div>
 					</div>
-					<p class="muted">one-line summary of impact</p>
+					<div class="role-loc muted"><em>Flexbase Technologies</em></div>
+					<p class="muted">full stack work on risk management for a fintech startup</p>
+				</div>
+				<div class="role">
+					<div class="role-row">
+						<div class="role-head">
+							<strong>Software Engineering Intern</strong>
+						</div>
+						<div class="role-date muted">Aug. 2025 - Oct. 2025</div>
+					</div>
+					<div class="role-loc muted"><em>Multicoreware Inc.</em></div>
+					<p class="muted">rust developer tooling for an embedded systems company</p>
+				</div>
+				<div class="role">
+					<div class="role-row">
+						<div class="role-head">
+							<strong>Program Ambassador</strong>
+						</div>
+						<div class="role-date muted">Jan. 2024 - June 2025</div>
+					</div>
+					<div class="role-loc muted"><em>EvCC MESA</em></div>
+					<p class="muted">built and taught quarter-long stem workshops</p>
+				</div>
+			</section>
+
+			<section id="skills" class="section">
+				<h1>skills</h1>
+				<div class="skills-group">
+					<div class="skills-label">languages</div>
+					<div class="chips">
+						<span class="chip">Python</span>
+						<span class="chip">C</span>
+						<span class="chip">HTML/CSS</span>
+						<span class="chip">JS</span>
+						<span class="chip">TS</span>
+						<span class="chip">SQL</span>
+						<span class="chip">Java</span>
+						<span class="chip">Dart</span>
+						<span class="chip">C++</span>
+					</div>
+				</div>
+				<div class="skills-group">
+					<div class="skills-label">tools</div>
+					<div class="chips">
+						<span class="chip">Supabase</span>
+						<span class="chip">Docker</span>
+						<span class="chip">Git</span>
+						<span class="chip">Linux</span>
+						<span class="chip">Socket.IO</span>
+					</div>
 				</div>
 			</section>
 
 			<section id="contact" class="section">
-				<h2>contact</h2>
-				<p>
-					<span class="muted">email</span>
-					<br />
-					<a href="mailto:you@example.com">you@example.com</a>
-				</p>
+				<h1>contact</h1>
+				<div class="contact-actions">
+					<a class="btn" href="https://cal.com/georgiy" target="_blank" rel="noopener noreferrer">
+						<Icon name="lucide:calendar" class="ico" width="16" height="16" />
+						<span>let's talk</span>
+					</a>
+					<a class="btn" href="mailto:glapin@uw.edu" target="_blank" rel="noopener noreferrer">
+						<Icon name="lucide:mail" class="ico" width="16" height="16" />
+						<span>or email me</span>
+					</a>
+				</div>
 			</section>
 		</main>
 
 		<footer class="footer">
-			<p>© georgiy lapin 2025. all rights reserved.</p>
+			<p>© georgiy lapin 2025</p>
 		</footer>
 
 		<style>
-			:root {
-				--text: #0a0a0a;
-				--muted: #6b7280;
-				--border: #e5e7eb;
-			}
+            :root {
+                --text: #0a0a0a;
+                --muted: #6b7280;
+                --border: #e5e7eb;
+                --sidebar-w: 52px;
+            }
 
-			html, body {
+            html, body {
 				margin: 0;
 				padding: 0;
-				background: #fff;
+				background: #ddd6d688;
 				color: var(--text);
 				font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-				line-height: 1.6;
+                line-height: 1.6;
+                scroll-behavior: smooth;
 			}
 
 			.container {
@@ -84,54 +174,106 @@
 				padding: 32px 20px 64px;
 			}
 
-			.nav {
-				position: sticky;
-				top: 0;
-				background: rgba(255,255,255,0.85);
+            .nav {
+				position: fixed;
+				top: 50%;
+				left: 20px;
+				transform: translateY(-50%);
+                width: var(--sidebar-w);
+                padding: 14px;
+				border: 1px solid var(--border);
+				border-radius: 999px;
+				background: rgba(255,255,255,0.75);
 				backdrop-filter: saturate(180%) blur(8px);
-				border-bottom: 1px solid var(--border);
-				padding: 10px 16px;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 				display: flex;
-				gap: 16px;
-				justify-content: center;
+				flex-direction: column;
+                align-items: center;
+                gap: 10px;
 				z-index: 10;
 			}
 
-			.nav a {
+            .nav a {
 				color: var(--text);
 				text-decoration: none;
-				font-size: 14px;
-				text-transform: lowercase;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+                width: 32px;
+                height: 32px;
+				border: 1px solid transparent;
+				border-radius: 999px;
+				transition: transform .15s ease, border-color .15s ease, background .15s ease;
+				will-change: transform;
+                position: relative;
 			}
 
-			.hero h1 {
-				font-size: 36px;
-				margin: 32px 0 4px;
-				font-weight: 700;
+            .nav a:hover { transform: scale(1.05); border-color: #cfd3d8; background: rgba(0,0,0,0.03); }
+            .nav a.active { border-color: #000; background: rgba(0,0,0,0.06); }
+
+            /* tooltip */
+            .nav a:hover::after {
+                content: attr(data-tip);
+                position: absolute;
+                left: calc(100% + 8px);
+                top: 50%;
+                transform: translateY(-50%);
+                background: #0a0a0a;
+                color: #fff;
+                border-radius: 6px;
+                padding: 4px 8px;
+                font-size: 12px;
+                white-space: nowrap;
+                pointer-events: none;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            }
+
+			@media (max-width: 800px) {
+				.nav { display: none; }
+			}
+
+			@media (min-width: 801px) {
+				.container { padding-left: 20px; }
+			}
+
+			h1 {
+				font-size: 30px;
+				margin: 1px 0 4px;
+				font-weight: 600;
+				display: inline-block;
+				transition: transform .15s ease;
+				will-change: transform;
+			}
+
+			h1:hover { transform: scale(1.05); }
+
+			.avatar {
+				display: block;
+				width: 150px;
+				height: 150px;
+				border-radius: 999px;
+				object-fit: cover;
+				border: 1px solid var(--border);
 			}
 
 			.tag {
 				margin: 0;
-				color: var(--muted);
+				font-size: 18px;
 			}
 
 			.sep {
 				margin: 6px 0;
-				color: var(--muted);
-			}
+=			}
 
 			.blurb {
 				margin: 0 0 24px 0;
 			}
 
+			/* corrected separator spacing */
+			.sep { margin: 6px 0; }
+
 			.section {
 				margin-top: 28px;
-			}
-
-			.section h2 {
-				font-size: 16px;
-				text-transform: lowercase;
-				margin: 0 0 8px;
 			}
 
 			.list {
@@ -140,6 +282,10 @@
 				margin: 0;
 			}
 
+			/* bulleted variants */
+			.bullets { list-style: disc; padding-left: 20px; }
+			.sublist { list-style: circle; padding-left: 18px; margin: 4px 0 0; }
+
 			.list li {
 				margin: 8px 0 0 0;
 			}
@@ -147,7 +293,10 @@
 			.muted { color: var(--muted); }
 
 			.role { margin-top: 8px; }
-			.role-head { font-size: 15px; }
+            .role-head { font-size: 15px; }
+            .role-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+            .role-date { text-align: right; font-size: 14px; }
+            .role-loc { margin: 4px 0; }
 
 			.footer {
 				border-top: 1px solid var(--border);
@@ -155,6 +304,140 @@
 				text-align: center;
 				color: var(--muted);
 			}
+
+			/* skills chips */
+			.skills-group { margin-top: 12px; }
+			.skills-label { font-size: 18px; font-weight: 500; margin-bottom: 6px; text-transform: lowercase; }
+			.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+			.chip {
+				display: inline-flex;
+				align-items: center;
+				padding: 4px 10px;
+				border: 1px solid #000000;
+				border-radius: 999px;
+				font-size: 12px;
+				font-weight: 400;
+				color: var(--muted);
+				background: transparent;
+				letter-spacing: .01em;
+				transition: transform .15s ease, border-color .15s ease, color .15s ease;
+				will-change: transform;
+			}
+
+			.chip:hover { transform: scale(1.05); color: var(--text); }
+
+			.contact-actions {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				flex-wrap: wrap;
+			}
+
+			.btn {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				padding: 6px 12px;
+				border: 2px solid #000000;
+				border-radius: 999px;
+				text-decoration: none;
+				background: transparent;
+				color: var(--text);
+				font-weight: 500;
+				font-size: 14px;
+				cursor: pointer;
+				transition: transform .15s ease, border-color .15s ease;
+				will-change: transform;
+				gap: 8px;
+			}
+
+			.btn:hover { transform: scale(1.05); border-color: #000000; }
+			.btn:active { transform: scale(0.98); }
+
+			.btn.secondary { color: var(--muted); }
+
+			.social {
+				display: flex;
+				gap: 14px;
+				margin-top: 8px;
+			}
+
+			.icon {
+				color: var(--text);
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 34px;
+				height: 34px;
+				border: 1px solid var(--border);
+				border-radius: 999px;
+				text-decoration: none;
+				transition: transform .25s ease;
+				will-change: transform;
+			}
+
+			.icon:hover { transform: scale(1.05); }
+
+			.email-container {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+
+			.email {
+				color: var(--text);
+				text-decoration: none;
+				transition: transform .15s ease;
+				display: inline-block;
+				will-change: transform;
+			}
+
+			.email:hover { transform: scale(1.05); }
 		</style>
+        <script>
+            const sections = [
+                { id: 'home', linkIndex: 0 },
+                { id: 'research', linkIndex: 1 },
+                { id: 'experience', linkIndex: 2 },
+                { id: 'contact', linkIndex: 3 },
+            ];
+
+            const nav = document.querySelector('.nav');
+            const links = nav ? Array.from(nav.querySelectorAll('a')) : [];
+
+            // Active section highlight
+            if ('IntersectionObserver' in window && links.length) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        const idx = sections.findIndex(s => s.id === entry.target.id);
+                        if (idx !== -1) {
+                            const link = links[sections[idx].linkIndex];
+                            if (entry.isIntersecting) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        }
+                    });
+                }, { rootMargin: '-35% 0px -55% 0px', threshold: 0.1 });
+
+                sections.forEach(s => {
+                    const el = document.getElementById(s.id);
+                    if (el) observer.observe(el);
+                });
+            }
+
+            // Hotkeys 1-4
+            window.addEventListener('keydown', (e) => {
+                const activeEl = document.activeElement;
+                if (activeEl && ['INPUT', 'TEXTAREA'].includes(activeEl.tagName)) return;
+                const keyToIndex = new Map([ ['1', 0], ['2', 1], ['3', 2], ['4', 3] ]);
+                const idx = keyToIndex.get(e.key);
+                if (idx !== undefined && links[idx]) {
+                    e.preventDefault();
+                    links[idx].click();
+                }
+            });
+        </script>
 	</body>
 </html>
