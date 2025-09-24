@@ -211,7 +211,6 @@ import { Icon } from 'astro-icon/components';
             .nav a:hover { transform: scale(1.05); border-color: #cfd3d8; background: rgba(0,0,0,0.03); }
             .nav a.active { border-color: #000; background: rgba(0,0,0,0.06); }
 
-            /* tooltip */
             .nav a:hover::after {
                 content: attr(data-tip);
                 position: absolute;
@@ -269,7 +268,6 @@ import { Icon } from 'astro-icon/components';
 				margin: 0 0 24px 0;
 			}
 
-			/* corrected separator spacing */
 			.sep { margin: 6px 0; }
 
 			.section {
@@ -282,7 +280,6 @@ import { Icon } from 'astro-icon/components';
 				margin: 0;
 			}
 
-			/* bulleted variants */
 			.bullets { list-style: disc; padding-left: 20px; }
 			.sublist { list-style: circle; padding-left: 18px; margin: 4px 0 0; }
 
@@ -305,7 +302,6 @@ import { Icon } from 'astro-icon/components';
 				color: var(--muted);
 			}
 
-			/* skills chips */
 			.skills-group { margin-top: 12px; }
 			.skills-label { font-size: 18px; font-weight: 500; margin-bottom: 6px; text-transform: lowercase; }
 			.chips { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -316,15 +312,15 @@ import { Icon } from 'astro-icon/components';
 				border: 1px solid #000000;
 				border-radius: 999px;
 				font-size: 12px;
-				font-weight: 400;
-				color: var(--muted);
+				font-weight: 600;
+				color: #000000;
 				background: transparent;
 				letter-spacing: .01em;
 				transition: transform .15s ease, border-color .15s ease, color .15s ease;
 				will-change: transform;
 			}
 
-			.chip:hover { transform: scale(1.05); color: var(--text); }
+			.chip:hover { transform: scale(1.05); color: #000000; }
 
 			.contact-actions {
 				display: flex;
@@ -405,7 +401,6 @@ import { Icon } from 'astro-icon/components';
             const nav = document.querySelector('.nav');
             const links = nav ? Array.from(nav.querySelectorAll('a')) : [];
 
-            // Active section highlight
             if ('IntersectionObserver' in window && links.length) {
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach((entry) => {
@@ -427,7 +422,6 @@ import { Icon } from 'astro-icon/components';
                 });
             }
 
-            // Hotkeys 1-4
             window.addEventListener('keydown', (e) => {
                 const activeEl = document.activeElement;
                 if (activeEl && ['INPUT', 'TEXTAREA'].includes(activeEl.tagName)) return;
