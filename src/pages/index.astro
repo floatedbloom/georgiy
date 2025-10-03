@@ -15,7 +15,8 @@ import { Icon } from 'astro-icon/components';
 			<a href="#home" aria-label="home" title="home · 1" data-tip="home · 1"><Icon name="lucide:home" width="18" height="18" /></a>
 			<a href="#research" aria-label="research" title="research · 2" data-tip="research · 2"><Icon name="lucide:book-open" width="18" height="18" /></a>
 			<a href="#experience" aria-label="experience" title="experience · 3" data-tip="experience · 3"><Icon name="lucide:briefcase" width="18" height="18" /></a>
-			<a href="#contact" aria-label="contact" title="contact · 4" data-tip="contact · 4"><Icon name="lucide:mail" width="18" height="18" /></a>
+			<a href="#skills" aria-label="skills" title="skills · 4" data-tip="skills · 4"><Icon name="lucide:code" width="18" height="18" /></a>
+			<a href="#contact" aria-label="contact" title="contact · 5" data-tip="contact · 5"><Icon name="lucide:mail" width="18" height="18" /></a>
 		</nav>
 
 		<main id="home" class="container">
@@ -395,7 +396,8 @@ import { Icon } from 'astro-icon/components';
                 { id: 'home', linkIndex: 0 },
                 { id: 'research', linkIndex: 1 },
                 { id: 'experience', linkIndex: 2 },
-                { id: 'contact', linkIndex: 3 },
+				{ id: 'skills', linkIndex: 3 },
+                { id: 'contact', linkIndex: 4 },
             ];
 
             const nav = document.querySelector('.nav');
@@ -425,7 +427,7 @@ import { Icon } from 'astro-icon/components';
             window.addEventListener('keydown', (e) => {
                 const activeEl = document.activeElement;
                 if (activeEl && ['INPUT', 'TEXTAREA'].includes(activeEl.tagName)) return;
-                const keyToIndex = new Map([ ['1', 0], ['2', 1], ['3', 2], ['4', 3] ]);
+                const keyToIndex = new Map([ ['1', 0], ['2', 1], ['3', 2], ['4', 3], ['5', 4] ]);
                 const idx = keyToIndex.get(e.key);
                 if (idx !== undefined && links[idx]) {
                     e.preventDefault();
