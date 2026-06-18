@@ -1,0 +1,188 @@
+---
+import { getPosts } from '../lib/posts';
+
+const posts = getPosts();
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/gl.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>blog · georgiy lapin</title>
+	</head>
+	<body>
+
+		<main class="container">
+			<h1>blog</h1>
+			<p class="back"><a href="/">← back</a></p>
+
+			<ul class="posts">
+				{posts.map((post) => (
+					<li>
+						<a href={`/blog/${post.slug}`}>{post.title}</a>
+					</li>
+				))}
+			</ul>
+		</main>
+
+		<footer class="footer">
+			<p>© georgiy lapin 2026</p>
+		</footer>
+
+		<style>
+            :root {
+                --text: #0a0a0a;
+                --muted: #6b7280;
+                --border: #e5e7eb;
+                --sidebar-w: 52px;
+            }
+
+            html, body {
+				margin: 0;
+				padding: 0;
+				min-height: 100vh;
+				background: #ddd6d688;
+				color: var(--text);
+				font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+                line-height: 1.6;
+			}
+
+			body {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.container {
+				flex: 1;
+				max-width: 720px;
+				margin: 0 auto;
+				padding: 32px 20px 64px;
+			}
+
+            .nav {
+				position: fixed;
+				top: 50%;
+				left: 20px;
+				transform: translateY(-50%);
+                width: var(--sidebar-w);
+                padding: 14px;
+				border: 1px solid var(--border);
+				border-radius: 999px;
+				background: rgba(255,255,255,0.75);
+				backdrop-filter: saturate(180%) blur(8px);
+				box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+				display: flex;
+				flex-direction: column;
+                align-items: center;
+                gap: 10px;
+				z-index: 10;
+			}
+
+            .nav a {
+				color: var(--text);
+				text-decoration: none;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+                width: 32px;
+                height: 32px;
+				border: 1px solid transparent;
+				border-radius: 999px;
+				transition: transform .15s ease, border-color .15s ease, background .15s ease;
+				will-change: transform;
+                position: relative;
+			}
+
+            .nav a:hover { transform: scale(1.05); border-color: #cfd3d8; background: rgba(0,0,0,0.03); }
+            .nav a.active { border-color: #000; background: rgba(0,0,0,0.06); }
+
+            .nav a:hover::after {
+                content: attr(data-tip);
+                position: absolute;
+                left: calc(100% + 8px);
+                top: 50%;
+                transform: translateY(-50%);
+                background: #0a0a0a;
+                color: #fff;
+                border-radius: 6px;
+                padding: 4px 8px;
+                font-size: 12px;
+                white-space: nowrap;
+                pointer-events: none;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            }
+
+			@media (max-width: 800px) {
+				.nav { display: none; }
+			}
+
+			@media (min-width: 801px) {
+				.container { padding-left: 20px; }
+			}
+
+			h1 {
+				font-size: 30px;
+				margin: 1px 0 4px;
+				font-weight: 600;
+				display: inline-block;
+				transition: transform .15s ease;
+				will-change: transform;
+			}
+
+			h1:hover { transform: scale(1.05); }
+
+			.muted { color: var(--muted); }
+
+			.tagline {
+				margin: 0;
+				font-size: 18px;
+			}
+
+			.empty {
+				margin-top: 20px;
+			}
+
+			.posts {
+				list-style: none;
+				padding: 0;
+				margin: 20px 0 0;
+			}
+
+			.posts li {
+				margin-top: 10px;
+			}
+
+			.posts a {
+				color: var(--text);
+				text-decoration: none;
+				transition: transform .15s ease;
+				display: inline-block;
+			}
+
+			.posts a:hover { transform: scale(1.05); }
+
+			.back {
+				margin-top: 32px;
+			}
+
+			.back a {
+				color: var(--text);
+				text-decoration: none;
+				transition: transform .15s ease;
+				display: inline-block;
+				will-change: transform;
+			}
+
+			.back a:hover { transform: scale(1.05); }
+
+			.footer {
+				border-top: 1px solid var(--border);
+				padding: 16px;
+				text-align: center;
+				color: var(--muted);
+			}
+		</style>
+	</body>
+</html>
